@@ -13,7 +13,7 @@ gulp.task('templates', function(){
 });
 
 gulp.task('styles', function(){
-    return sass('assets/player.sass', {style: 'compressed'})
+    return sass('assets/sass/player.sass', {style: 'compressed'})
             .on('error', function(err){
                 console.error('Error! ', err.message);
             })

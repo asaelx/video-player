@@ -1,0 +1,121 @@
+$icon-size: 28px
+$main-color: #34495E
+$white: #ffffff
+$black: #000000
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    outline: 0
+
+symbol[id^="icon-"]
+    fill: white
+
+.player
+    border-radius: 3px
+    width: 960px
+    margin: 0 auto
+    position: relative
+    overflow: hidden
+    video
+        width: 100%
+        vertical-align: bottom
+        &:hover
+            cursor: pointer
+    .player-controls
+        border-radius: 0 0 3px 3px
+        color: $white
+        background: rgba($main-color, 0.8)
+        width: 100%
+        padding: 8px
+        position: absolute
+        bottom: 0
+        left: 0
+        transition: opacity 0.3s ease
+
+        &.visible
+            opacity: 1
+        &.invisible
+            opacity: 0
+        &:after
+            content: " "
+            display: table
+            clear: both
+
+        > *
+            display: block
+            float: left
+
+        .player-options
+            float: right
+
+        .player-info
+            font-size: 16px
+            padding-top: 0.4rem
+            font-family: Helvetica, Arial, sans-serif
+
+        button
+            background: none
+            border: 0
+            padding: 0
+            width: $icon-size
+            height: $icon-size
+            &:hover
+                cursor: pointer
+            svg
+                width: $icon-size
+                height: $icon-size
+
+        input[type="range"]
+            appearance: none
+            &::-webkit-slider-thumb,
+            &::-moz-range-thumb
+                appearance: none
+
+        .player-volume-slider
+            background: rgba($white, 0.3)
+            border-radius: 5px
+            height: 10px
+            cursor: pointer
+            top: -7px
+            position: relative
+            margin-right: 16px
+            &::-webkit-slider-thumb
+                appearance: none
+                background: rgba($main-color, 0.8)
+                border-radius: 50%
+                height: 10px
+                width: 10px
+                cursor: pointer
+
+
+        .player-progress
+            position: absolute
+            top: -10px
+            left: 0
+            width: 100%
+            height: 10px
+            & > *
+                appearance: none
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+            .player-seek-slider
+                background: rgba($white, 0.6)
+                cursor: pointer
+                opacity: 0
+            .player-progress-bar
+                pointer-events: none
+                &::-webkit-progress-bar
+                    background: rgba($black, 0.2)
+                &::-webkit-progress-value
+                    background: rgba($main-color, 0.7)
+            .player-buffer-bar
+                pointer-events: none
+                &::-webkit-progress-bar
+                    background: none
+                &::-webkit-progress-value
+                    background: rgba($black, 0.1)
